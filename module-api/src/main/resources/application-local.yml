@@ -1,0 +1,34 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: local
+  h2:
+    console:
+      enabled: false
+  datasource:
+    url: jdbc:mysql://localhost:3306/naljava?serverTimezone=UTC&characterEncoding=UTF-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: naljava
+    password: naljava220801!
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+init_data: true
+init_file_data: false
+
+http_https: http://
+server_domain: localhost:${server.port}
+service_domain: localhost:${server.port}
+
+logging:
+  level:
+    org:
+      hibernate:
+        #        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+#              BasicBinder: TRACE

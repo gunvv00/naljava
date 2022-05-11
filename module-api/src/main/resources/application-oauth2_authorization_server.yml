@@ -1,0 +1,29 @@
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+    org.springframework.security.oauth2: INFO
+
+security:
+  oauth2:
+    client:
+      access-token-validity-seconds: 2592000 #30?
+      refresh-token-validity-seconds: 8640000 #100?
+      client-id: naljava
+      client-secret: 1234
+      basic: bmFsamF2YToxMjM0
+      scope:
+        - app
+      authorized-grant-types:
+        - password
+        - refresh_token
+    authorization:
+      check-token-access: "isAuthenticated()"
+      jwt:
+        key-value: naljava
+        key-password: naljava1234
+    resource:
+      jwt:
+        key-value: naljava
+        key-password: naljava1234
