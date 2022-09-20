@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>NALJAVA API Server</title>
@@ -8,5 +8,44 @@
 
 <h3>NALJAVA API Server - 날 잡아</h3>
 
+</hr>
+
+<div>
+    <div>서버 PORT : <span id="portTextId"></span></div>
+    <div>서버 실행 시간 : <span id="serverStartDateTimeId"></span></div>
+    <div>S3 URL : <span id="bucketUrlId"></span></div>
+</div>
+
+</hr>
+
+<div>
+    <div><a href="" id="serverUrlId">서버 URL - <span id="serverUrlText"></span></a></div>
+    <div><a href="" id="serviceUrlId">서비스 웹앱 URL - <span id="serviceUrlText"></span></a></div>
+</div>
+
+<script th:inline="javascript" type="application/javascript">
+    /*<![CDATA[*/
+    var port = /*[[ ${port} ]]*/;
+    var serverStartDateTime = /*[[ ${serverStartDateTime} ]]*/;
+    var bucketUrl = /*[[ ${bucketUrl} ]]*/;
+
+    var httpHttps = /*[[ ${httpHttps} ]]*/;
+    var serverUrl = httpHttps + /*[[ ${serverDomain} ]]*/;
+    var serviceUrl = httpHttps + /*[[ ${serviceDomain} ]]*/;
+    /*]]*/
+
+    window.onload = function () {
+        document.getElementById('serverUrlId').href = serverUrl;
+        document.getElementById('serviceUrlId').href = serviceUrl;
+
+        document.getElementById('serverUrlText').textContent = serverUrl;
+        document.getElementById('serviceUrlText').textContent = serviceUrl;
+
+        document.getElementById('portTextId').textContent = port;
+        document.getElementById('serverStartDateTimeId').textContent = serverStartDateTime;
+        document.getElementById('bucketUrlId').textContent = bucketUrl;
+    };
+
+</script>
 </body>
 </html>
