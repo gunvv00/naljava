@@ -4,6 +4,7 @@ import com.naljava.models.schedules.domain.schedule.Schedule;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -32,7 +33,7 @@ public class Member {
     /**
      * 고유 코드
      */
-    private String code;
+    private UUID code;
 
     /**
      * 일정

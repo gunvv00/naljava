@@ -6,6 +6,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -29,7 +30,7 @@ public class Schedule extends BaseTimestampEntity {
     /**
      * 고유 코드
      */
-    private String code;
+    private UUID code;
 
     /**
      * 설명
