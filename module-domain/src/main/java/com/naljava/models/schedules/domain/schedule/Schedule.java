@@ -1,5 +1,6 @@
-package com.naljava.models.accounts.domain;
+package com.naljava.models.schedules.domain.schedule;
 
+import com.naljava.commons.base.BaseTimestampEntity;
 import lombok.*;
 
 import javax.persistence.*;
@@ -12,16 +13,18 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id", callSuper = false)
-public class Account {
+public class Schedule extends BaseTimestampEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String code;
+
     private String name;
 
-    private String username;
+    private String description;
 
-    private String password;
+//    private Place place;
 
 }
